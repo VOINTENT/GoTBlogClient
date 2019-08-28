@@ -1,0 +1,20 @@
+{% extends 'gotblog/base_gotblog.html' %}
+
+{% block title %}
+	{{ post.title|title }}
+{% endblock %}
+
+{% block content %}
+	<div class="card" style="width: 18rem;">
+		<div class="card-header">
+			Пост
+		</div>
+		<ul class="list-group list-group-flush">
+			<li class="list-group-item">Id: {{ post.id }}</li>
+			<li class="list-group-item">Пользователь: {{ post.user }}</li>
+			<li class="list-group-item">Заголовок: {{ post.title }}</li>
+			<li class="list-group-item">Текст: {{ post.body }}</li>
+			<li class="list-group-item">Дата публикации: {{ post.publication_date }}</li>
+		</ul>
+	</div>
+{% endblock %}

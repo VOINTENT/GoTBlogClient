@@ -1,0 +1,30 @@
+{% extends 'gotblog/base_gotblog.html' %}
+
+{% block title %}
+	Подписчики
+{% endblock %}
+
+{% block content %}
+	<table class="table table-hover">
+		<thead>
+		    <tr>
+		      <th scope="col">Id</th>
+		      <th scope="col">Пользователь</th>
+		      <th scope="col">Подписчик</th>
+		      <th scope="col"></th>
+		    </tr>
+  		</thead>
+
+  		<tbody>
+			{% for subscriber in page_object.object_list %}
+			<tr>
+				<th scope="row">{{ subscriber.id }}</th>
+      			<td>{{ subscriber.user }}</td>
+      			<td>{{ subscriber.subscriber }}</td>
+      			<td><a href="{{ subscriber.get_absolute_url }}" class="btn btn-link">Подробнее</a></td>
+      		</tr>
+			{% endfor %}
+  		</tbody>
+	</table>
+	
+{% endblock %}  

@@ -1,0 +1,15 @@
+{% extends 'gotblog/base_gotblog.html' %}
+
+{% block title %}
+	Удалить пост
+{% endblock %}
+
+{% block content %}
+	<form action="{{ post.get_delete_url }}" method="post">
+		{% csrf_token %}
+
+		<h3>Вы уверены, что хотите удалить <b>{{ post.title|title }}</b> пост?</h3>
+		<button type="submit" name="button" class="btn btn-danger mr-2">Удалить</button>
+		<a href="{{ post.get_absolute_url }}">Отмена</a>
+	</form>
+{% endblock %}
